@@ -4,7 +4,6 @@ import lk.ashan.dao.EmployeeDao;
 import lk.ashan.entity.Employee;
 import lk.ashan.entity.Gender;
 
-import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
