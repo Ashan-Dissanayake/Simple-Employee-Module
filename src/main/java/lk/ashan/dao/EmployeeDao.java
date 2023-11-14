@@ -1,6 +1,7 @@
 package lk.ashan.dao;
 
 import lk.ashan.entity.Employee;
+import lk.ashan.entity.Gender;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -38,11 +39,24 @@ public class EmployeeDao {
     }
 
     public static List<Employee> getAll() {
-
         String qry = "SELECT * FROM employee";
-        List<Employee> employees = get(qry);
+        return get(qry);
+    }
 
-        return employees;
+    public static List<Employee> getAllByName(String name) {
+        String qry = "select * from  employee where name like '" + name + "%'";
+        return get(qry);
+    }
+
+    public static List<Employee> getAllByGender(Gender gender) {
+        String qry = "SELECT * FROM employee where gender_id=" + gender.getId();
+        return get(qry);
+    }
+
+
+    public static List<Employee> getAllByNameAndGender(String name, Gender gender) {
+        String qry = "SELECT * FROM employee where name like '" + name + "%' and gender_id=" + gender.getId();
+        return get(qry);
     }
 
 }
