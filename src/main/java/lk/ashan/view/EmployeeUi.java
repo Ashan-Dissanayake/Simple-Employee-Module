@@ -478,8 +478,6 @@ public class EmployeeUi extends JFrame {
 
     public void btnUpdateAp(ActionEvent e) {
 
-        // System.out.println("Test-OK");
-
         String errors = getErrors();
         employee.setId(oldEmployee.getId());
 
