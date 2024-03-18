@@ -34,7 +34,7 @@ public class EmployeeController {
 
     public static String post(Employee employee) {
 
-        String msg = "";
+        String msg ;
         String error = "";
 
         Employee emp = EmployeeDao.getByNic(employee.getNic());

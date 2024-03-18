@@ -198,9 +198,7 @@ public class EmployeeUi extends JFrame {
         Vector<Object> genders = new Vector<Object>();
         genders.add("Select a Gender");
 
-        for (Gender gen : genlist) {
-            genders.add(gen);
-        }
+        genders.addAll(genlist);
 
         DefaultComboBoxModel<Object> genModel = new DefaultComboBoxModel<Object>(genders);
         cmbSearchGender.setModel(genModel);
@@ -209,7 +207,7 @@ public class EmployeeUi extends JFrame {
 
     public void fillTable(List<Employee> emplist) {
 
-        Vector data = new Vector<>();
+        Vector<Object> data = new Vector<>();
 
         for (Employee emp : emplist) {
 
@@ -272,9 +270,7 @@ public class EmployeeUi extends JFrame {
         Vector<Object> genders = new Vector<Object>();
         genders.add("Select a Gender");
 
-        for (Gender gen : genlist) {
-            genders.add(gen);
-        }
+        genders.addAll(genlist);
 
         DefaultComboBoxModel<Object> genModel = new DefaultComboBoxModel<Object>(genders);
         cmbGender.setModel(genModel);
