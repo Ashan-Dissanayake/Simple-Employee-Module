@@ -7,13 +7,11 @@ import lk.ashan.entity.Gender;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 import java.awt.*;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Hashtable;
@@ -120,47 +118,19 @@ public class EmployeeUi extends JFrame {
 
         con.add(jspTable);
 
-        btnSearch.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                btnSearchAp(e);
-            }
-        });
+        btnSearch.addActionListener(this::btnSearchAp);
 
-        btnClearSearch.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                btnClearSearchAp(e);
-            }
-        });
+        btnClearSearch.addActionListener(this::btnClearSearchAp);
 
-        btnAdd.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                btnAddAp(e);
-            }
-        });
+        btnAdd.addActionListener(this::btnAddAp);
 
-        btnClear.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                btnClearAp(e);
-            }
-        });
+        btnClear.addActionListener(this::btnClearAp);
 
-        tblEmployee.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-            public void valueChanged(ListSelectionEvent e) {
-                tblEmployeeVc(e);
-            }
-        });
+        tblEmployee.getSelectionModel().addListSelectionListener(this::tblEmployeeVc);
 
-        btnUpdate.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                btnUpdateAp(e);
-            }
-        });
+        btnUpdate.addActionListener(this::btnUpdateAp);
 
-        btnDelete.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                btnDeleteAp(e);
-            }
-        });
+        btnDelete.addActionListener(this::btnDeleteAp);
 
         txtName.addKeyListener(new KeyAdapter() {
             public void keyReleased(KeyEvent e) {
@@ -174,11 +144,7 @@ public class EmployeeUi extends JFrame {
             }
         });
 
-        cmbGender.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                cmbGenderAp(e);
-            }
-        });
+        cmbGender.addActionListener(this::cmbGenderAp);
 
         initialize();
 
@@ -236,6 +202,7 @@ public class EmployeeUi extends JFrame {
 
         Object sitem = cmbSearchGender.getSelectedItem();
 
+        assert sitem != null:"sitem must not be null";
         if (!sitem.equals("Select a Gender"))
             gender = (Gender) sitem;
 
