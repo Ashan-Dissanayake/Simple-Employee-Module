@@ -202,7 +202,6 @@ public class EmployeeUi extends JFrame {
 
         Object sitem = cmbSearchGender.getSelectedItem();
 
-        assert sitem != null:"sitem must not be null";
         if (!sitem.equals("Select a Gender"))
             gender = (Gender) sitem;
 
